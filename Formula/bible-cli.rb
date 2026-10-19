@@ -13,7 +13,8 @@ class BibleCli < Formula
     ldflags = %W[
       -s -w
       -X github.com/vmrocha/bible-cli/internal/buildinfo.version=v#{version}
-      -X github.com/vmrocha/bible-terminal/internal/buildinfo.version=v#{version}
+      -X github.com/vmrocha/bible-cli/internal/buildinfo.commit=unknown
+      -X github.com/vmrocha/bible-cli/internal/buildinfo.date=unknown
     ]
 
     system "go", "build", *std_go_args(output: bin/"bible", ldflags:), "./cmd/bible"
